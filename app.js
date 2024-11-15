@@ -50,3 +50,14 @@ gsap.to(".line-section", {
   repeat: -1,
   ease: "linear",
 });
+
+var swiper = new Swiper(".mySwiper", {
+  slidesPerView: 1.9,
+  spaceBetween: 300,
+  freeMode: true,
+  centeredSlides: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+});

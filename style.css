@@ -20,6 +20,9 @@
 .wow {
   font-family: wow;
 }
+* {
+  user-select: none;
+}
 
 /* #nav{
    transform: translate(-50%,-130%);
@@ -30,3 +33,51 @@
   transform-origin: 50% 90%;
 }
 
+.swiper {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: grab;
+}
+.swiper-slide:active {
+  cursor: grabbing;
+}
+
+.msg::after {
+  content: "";
+  position: absolute;
+  top: 49%;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border: 4px solid black;
+  border-radius: 50%;
+  right: -3%;
+}
+.msg::before {
+  content: "";
+  position: absolute;
+  top: 49%;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border: 4px solid black;
+  border-radius: 50%;
+  left: -2.9%;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-right: 60px solid transparent;
+  border-left: 25px solid transparent;
+  border-top: 30px solid #70a2e1;
+}
