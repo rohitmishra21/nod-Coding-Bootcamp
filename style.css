@@ -1,32 +1,32 @@
 @font-face {
-    font-family: wow;
-    src: url(./font/HeyWow-Book.woff2);
+  font-family: wow;
+  src: url(./font/HeyWow-Book.woff2);
 }
 @font-face {
-    font-family: wob;
-    src: url(./font/HeyWow-Bold.woff2);
+  font-family: wob;
+  src: url(./font/HeyWow-Bold.woff2);
 }
 @font-face {
-    font-family: wsw;
-    src: url(./font/HeyWow-SemiBold.woff2);
+  font-family: wsw;
+  src: url(./font/HeyWow-SemiBold.woff2);
 }
 
+.wsw {
+  font-family: wsw;
+}
+.wob {
+  font-family: wob;
+}
+.wow {
+  font-family: wow;
+}
 
-.wsw{
-    font-family: wsw;
-}
-.wob{
-    font-family: wob;
-}
-.wow{
-    font-family: wow;
-}
-
-#nav{
+/* #nav{
    transform: translate(-50%,-130%);
    
+} */
+
+.flower {
+  transform-origin: 50% 90%;
 }
 
-.flower{
-    transform-origin: 50% 90%;
-}

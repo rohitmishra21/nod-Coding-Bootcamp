@@ -1,3 +1,21 @@
+var nav = document.querySelector("#nav");
+
+document.querySelector("body").addEventListener("wheel", (dets) => {
+  console.log(dets);
+  if (dets.deltaY >= 0) {
+    gsap.to(nav, {
+      transform: "translate(-50%, -105%)",
+      ease: "power1.out",
+      delay: 0.3,
+    });
+  } else {
+    gsap.to(nav, {
+      transform: "translate(-50%, 0%)",
+      ease: "power1.out",
+    });
+  }
+});
+
 var direction = 1;
 var targetUp = 95;
 var targetDown = 65;
@@ -25,3 +43,10 @@ setInterval(() => {
     }deg) `,
   });
 }, 50);
+
+gsap.to(".line-section", {
+  x: -window.innerWidth,
+  duration: 10,
+  repeat: -1,
+  ease: "linear",
+});
