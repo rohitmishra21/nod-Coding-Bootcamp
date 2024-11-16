@@ -43,7 +43,7 @@
   text-align: center;
   font-size: 18px;
   display: flex;
-  justify-content: center;
+   
   align-items: center;
   cursor: grab;
 }
@@ -80,4 +80,13 @@
   border-right: 60px solid transparent;
   border-left: 25px solid transparent;
   border-top: 30px solid #70a2e1;
+}
+
+.slide{
+    width: 50vh;
+    height: 40vh;
+    border-radius: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
 }

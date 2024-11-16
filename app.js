@@ -50,10 +50,26 @@ gsap.to(".line-section", {
   repeat: -1,
   ease: "linear",
 });
+gsap.to(".imgLine img", {
+  x: "-17.75rem",
+  duration: 8,
+  repeat: -1,
+  ease: "linear",
+});
 
 var swiper = new Swiper(".mySwiper", {
   slidesPerView: 1.9,
   spaceBetween: 300,
+  freeMode: true,
+  centeredSlides: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+});
+var swiper = new Swiper(".mySwiper-2", {
+  slidesPerView: 3,
+  spaceBetween: 50,
   freeMode: true,
   centeredSlides: true,
   pagination: {
