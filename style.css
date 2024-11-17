@@ -10,7 +10,8 @@
   font-family: wsw;
   src: url(./font/HeyWow-SemiBold.woff2);
 }
-html, body {
+html,
+body {
   overflow-x: hidden;
 }
 
@@ -92,3 +93,4 @@ html, body {
   align-items: flex-start;
   gap: 10px;
 }
+

@@ -119,10 +119,11 @@ latters.forEach((latter) => {
   });
 });
 
-const eyeContaner = document.querySelector(".eyeContaner");
+const eyeContaner = document.querySelectorAll(".eyeContaner");
 var count = 0;
-function eyeManger() {
-  eyeContaner.addEventListener("mouseenter", () => {
+
+eyeContaner.forEach((contaner) => {
+  contaner.addEventListener("mouseenter", () => {
     if (count == 0) {
       gsap.to(".redcircle", {
         marginTop: "-80%",
@@ -141,34 +142,143 @@ function eyeManger() {
       count = 0;
     }
   });
-}
-
-eyeManger();
-
-var page2 = document.querySelector("#page-2");
-
-page2.addEventListener("mousemove", (dets) => {
-  let X = (dets.x - eyeContaner.getBoundingClientRect().x) / 20;
-  let Y = (dets.y - eyeContaner.getBoundingClientRect().y) / 20;
-
-  gsap.to(".eyeboll", {
-    transform: `translate(${X}%,${Y}%)`,
-  });
 });
 
-function eyeIntervel() {
+eyeContaner.forEach((cont) => {
   setInterval(() => {
-    eyeContaner.style.height = "0px";
+    cont.style.height = "0px";
     setTimeout(() => {
-      eyeContaner.style.height = "160px";
+      cont.style.height = "160px";
     }, 200);
   }, 3000);
   setInterval(() => {
-    eyeContaner.style.height = "0px";
+    cont.style.height = "0px";
     setTimeout(() => {
-      eyeContaner.style.height = "160px";
+      cont.style.height = "160px";
     }, 200);
   }, 3100);
+});
+
+var videoPlayer = document.getElementById("videoPlayer");
+var playbtn = document.getElementById("playBtn");
+
+videoPlayer.addEventListener("click", function () {
+  if (videoPlayer.paused == false) {
+    videoPlayer.pause();
+    playbtn.style.display = "flex";
+  } else {
+    videoPlayer.play();
+    playbtn.style.display = "none";
+  }
+});
+
+var bootCamp = [
+  {
+    id: "0",
+    sno: "1",
+    selected: false,
+    img:
+      "https://nodcoding.com/wp-content/uploads/2024/07/home-experience-720x778.jpg",
+    name: "The Stockholm Experience",
+    para:
+      "Our Stockholm campus is more than a place to learn; it’s a community. Here’s why it’s the perfect launchpad for your tech career.",
+  },
+  {
+    id: "1",
+    sno: "2",
+    selected: false,
+    img:
+      "https://nodcoding.com/wp-content/uploads/2024/07/home-accommodation-720x778.jpg",
+    name: " Get Help Finding Accommodation",
+    para:
+      "Why not turn your coding journey into an adventure by travelling to Stockholm? If you are interested in a social living experience beyond the ordinary, we collaborate with Allihoop, a community-focused startup that can help with affordable rental studios around Stockholm.",
+  },
+  {
+    id: "2",
+    sno: "3",
+    selected: true,
+    img:
+      "https://nodcoding.com/wp-content/uploads/2024/07/home-islands-720x778.jpg",
+    name: " The City of Islands",
+    para:
+      "Stockholm stretches across fourteen islands, offering unique scenery where the waterways mix with the vibrant urban skyline. With each island having its own cultural flavor, Stockholm presents you with a smorgasbord of activities; from the cobbled streets of the Old Town to the bohemian vibes of Södermalm, there is always something new to experience.",
+  },
+  {
+    id: "3",
+    sno: "4",
+    selected: false,
+    img:
+      "https://nodcoding.com/wp-content/uploads/2024/07/home-more-ikea-720x778.jpg",
+    name: "More than IKEA",
+    para:
+      "The success of Swedish startups has turned the capital city into a world-renowned tech hub, attracting the attention of talented people and international investors. Apart from Silicon Valley, Stockholm has bred the world’s most tech unicorns per capita, such as Spotify, Klarna, Northvolt, Voi, King, Einride and the list goes on…",
+  },
+  {
+    id: "4",
+    sno: "5",
+    selected: false,
+    img:
+      "https://nodcoding.com/wp-content/uploads/2024/07/home-foodies-720x778.jpg",
+    name: " A Haven for Foodies",
+    para:
+      "Swedish meatballs, smoked salmon, and cinnamon buns are all key to traditional Swedish cuisine, but there is so much more to discover in Stockholm. From trendy rooftops for social gatherings to cozy hidden gems serving innovative fusion cuisine, Stockholm boasts an exceptional culinary scene that celebrates the finest of Swedish ingredients and international flavors.",
+  },
+];
+
+function imgChanger() {
+  var clutter = "";
+  var btnclutter = "";
+
+  bootCamp.forEach((elem) => {
+    if (elem.selected === true) {
+      clutter += ` <div class="w-full xl:py-0 py-10 xl:pt-20 xl:flex h-full">
+            <div class="xl:w-[80%] xl:block hidden h-full">
+              <div class="img-contaner pl-24 w-[80%] h-[85%]">
+                <img
+                  class="w-full h-full object-cover"
+                  src=${elem.img}
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="xl:w-full xl:justify-start flex h-full">
+              <div class="xl:w-1/2 text-start p-5 xl:p-0 h-full">
+                <div
+                  class="text-4xl font-semibold text-[#383030] flex justify-center flex-col gap-16  h-full w-full"
+                >
+                  <h1 class="">
+                    <span>
+                      <i class="text-[#FFD37D] ri-poker-diamonds-fill"></i
+                    ></span>
+                    ${elem.name}
+                  </h1>
+                  <h1 class="text-lg xl:h-fit h-[70vh] leading-relaxed text-[#717171]">
+                   ${elem.para}
+                  </h1>
+                 
+                </div>
+              </div>
+             
+            </div>
+          </div>`;
+    }
+
+    btnclutter += ` <h1 class="px-5 py-2 cursor-pointer bg-[#FFD37D] text-lg rounded-full ${elem.selected}" id=${elem.id}>${elem.sno}</h1>`;
+  });
+
+  document.getElementById("page-8").innerHTML = clutter;
+  document.querySelector(".allBtn").innerHTML = btnclutter;
 }
 
-eyeIntervel();
+imgChanger();
+
+document.querySelector(".allBtn").addEventListener("click", (dets) => {
+  bootCamp.forEach(function (elem) {
+    elem.selected = false;
+    console.log(elem.selected);
+  });
+  bootCamp[dets.target.id].selected = true;
+
+  imgChanger();
+  console.log(bootCamp);
+});
