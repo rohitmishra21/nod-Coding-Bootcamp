@@ -252,7 +252,7 @@ function imgChanger() {
                     ></span>
                     ${elem.name}
                   </h1>
-                  <h1 class="text-lg xl:h-fit h-[70vh] leading-relaxed text-[#717171]">
+                  <h1 class="text-lg xl:h-fit min-h-[40vh] leading-relaxed text-[#717171]">
                    ${elem.para}
                   </h1>
                  
