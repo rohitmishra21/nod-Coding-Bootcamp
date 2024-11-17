@@ -10,6 +10,9 @@
   font-family: wsw;
   src: url(./font/HeyWow-SemiBold.woff2);
 }
+html, body {
+  overflow-x: hidden;
+}
 
 .wsw {
   font-family: wsw;
