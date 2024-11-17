@@ -43,7 +43,6 @@
   text-align: center;
   font-size: 18px;
   display: flex;
-   
   align-items: center;
   cursor: grab;
 }
@@ -82,11 +81,11 @@
   border-top: 30px solid #70a2e1;
 }
 
-.slide{
-    width: 50vh;
-    height: 40vh;
-    border-radius: 20px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
+.slide {
+  width: 50vh;
+  height: 40vh;
+  border-radius: 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
 }
